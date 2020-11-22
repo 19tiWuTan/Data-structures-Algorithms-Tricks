@@ -4,7 +4,26 @@
     2 u v xóa cạnh u v
     3 u v hỏi xem u và v có đường đi đến với nhau hay không ? 
     https://vn.spoj.com/problems/VOSCOMPS/
+    
+    
 */
+
+/*
+
+  giải : dùng chia để trị kết hợp dsu with rollback để thực hiện offline các truy vấn
+  L[i] = idx , nếu query[i] = 2 u v trong đó idx là thứ tự truy vấn < i và idx lớn nhất : query[idx] = 1 u[i], v[i] tức thêm cạnh u[i], v[i]
+  R[i] = idx, nếu query[i] = 1 u v, trong đó idx là thứ tự truy vấn < i và idx là nhỏ nhất : query[idx] = 2 u[i], v[i], tức xóa cạnh u[i], v[i]
+  chia đôi các khoảng truy vấn để thực hiện lần lượt
+  
+  khi đến đoạn lefr, right
+  mình sẽ đi lần lượt vào left, mid và mid + 1, right
+  
+  trước khi đi vào left, mid : duyệt qua tất cả truy vấn 2 u v từ mid + 1 đến right, truy vấn 2 u[i] v[i] nào có L[i] < left nghĩa là cạnh u[i] v[i]
+   được thêm trước thời gian truy vấn left, nên sử dụng dsu gộp đỉnh u[i] v[i] lại , nhớ lưu lại để lúc sau thực hiện roll back
+  
+  trước khi đi vào mid + 1, right : duyệt qua tất cả các truy vấn 1 u v từ left đến mid, truy vấn 1 u[i] v[i] nào có R[i] > right nghĩa là cạnh u[i] v[i]
+    sẽ được xóa sau thời gian truy vấn right, nên dsu gộp đỉnh u[i] v[i] lại, cũng tương tự như trên, lưu lại nhớ để thực hiện rollback
+ */
 
 // i'm wutan
 #include <bits/stdc++.h>
