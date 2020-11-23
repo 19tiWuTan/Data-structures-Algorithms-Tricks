@@ -99,7 +99,7 @@ bool cmp1(pii a, pii b){
     return a.se < b.se;
 }
 
-void compress(){
+void compress(){ /// nén theo y
     sort(a + 1, a + 1 + n, cmp1);
     int cnt = 0;
     FU(i, 1, n){
@@ -112,7 +112,7 @@ void compress(){
 
 }
 
-void make_px(){
+void make_px(){ /// nén theo x
     sort(a + 1, a + 1 + n);
     int cnt = 0;
     FU(i, 1, n){
