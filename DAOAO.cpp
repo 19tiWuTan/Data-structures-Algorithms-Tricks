@@ -23,7 +23,7 @@
 	thì hcn ABCD này thỏa, cập nhật diện tích
   
   1 điểm (x, y) nằm trong hcn ABCD nếu : xa <= x <= xb && ya <= y <= yc
-  dưới đây trình bày kĩ thuật trie + mảng động để đếm xem trong đoạn [L,R] có bao nhiêu phần tử < K
+  dưới đây trình bày kĩ thuật trie + mảng động để đếm xem trong đoạn [L,R] có bao nhiêu phần tử < K thay vì dùng BIT 2 chiều 1 cách ngu muội
 
 */
 // i'm wutan
