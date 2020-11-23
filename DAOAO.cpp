@@ -8,14 +8,19 @@
 	vector < pii> in[N] : vector[j] lưu các hoành độ của các điểm có tung độ là j và vị trí của tung độ j trong px[i]
 	trong đó .fisrt lưu hoành độ, .se lưu vị trí của nó trong px[.first]
 	
-	Nhận xét 1 : các cạnh của hcn phải song song với 2 trục tọa độ, nên A(xa, ya) B(xb, yb), C(xc, yc) , D(xd, yd) lần lượt là tọa độ ô trái dưới, ô phải dưới, trái trên, phải trên sẽ có 
+	Nhận xét: 
+	các cạnh của hcn phải song song với 2 trục tọa độ, nên A(xa, ya) B(xb, yb), C(xc, yc) , D(xd, yd) 
+	lần lượt là tọa độ ô trái dưới, ô phải dưới, trái trên, phải trên sẽ có 
 	xa = xc, xb = xd
 	ya = yb, yc = yd
-	Khi đó, sweepline qua các hoành độ ( dựa trên vector px ), ở mỗi hoành độ đang duyệt, ta duyệt lần lượt 2 tung độ cạnh nhau trong vector px[i] :y1 = px[i][j], y2 = px[i][j+1]
-  tại sao lại là 2 tung độ kề nhau : để dễ tìm được hcn mà không có điểm nào khác nằm trên cạnh của nó.
+	Khi đó, sweepline qua các hoành độ ( dựa trên vector px ), 
+	ở mỗi hoành độ đang duyệt, ta duyệt lần lượt 2 tung độ cạnh nhau trong vector px[i] :  y1 = px[i][j], y2 = px[i][j+1]
+  	tại sao lại là 2 tung độ kề nhau : để dễ tìm được hcn mà không có điểm nào khác nằm trên cạnh của nó.
 	Việc còn lại ta chỉ việc tìm 2 điểm đối diện. ta dựa vào vector in[y1] và in[y2]
-	cần duyệt 2 tung độ cạnh nhau của y1 và y2 ( ở đây mình chỉ duyệt 2 hoành độ cuối cùng của in[y1]), cũng phải đảm bảo y1 và y2 trong px[in[y1][l1-2].fi] phải kề nhau.
-	khi đó ta đã có được tọa độ 4 đỉnh, cần kiểm tra xem trong hcn ABCD có tất  cả bao nhiêu điểm, nếu có 4 điểm ( tức 4 điểm ở góc ) thì hcn ABCD này thỏa, cập nhật diện tích
+	cần duyệt 2 tung độ cạnh nhau của y1 và y2 ( ở đây mình chỉ duyệt 2 hoành độ cuối cùng của in[y1]),
+	cũng phải đảm bảo y1 và y2 trong px[in[y1][l1-2].fi] phải kề nhau.
+	khi đó ta đã có được tọa độ 4 đỉnh, cần kiểm tra xem trong hcn ABCD có tất cả bao nhiêu điểm, nếu có 4 điểm ( tức 4 điểm ở góc ) 
+	thì hcn ABCD này thỏa, cập nhật diện tích
   
   1 điểm (x, y) nằm trong hcn ABCD nếu : xa <= x <= xb && ya <= y <= yc
   dưới đây trình bày kĩ thuật trie + mảng động để đếm xem trong đoạn [L,R] có bao nhiêu phần tử < K
