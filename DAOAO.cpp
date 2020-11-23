@@ -84,11 +84,12 @@ public:
         index[0] = index[1] = NULL;
     }
 }; node *root;
-int n, m, X[N], temp[N], Y[N];
+int n, m, X[N], temp[N], Y[N]; //// X[] : hoành độ trước khi nén, Y[] : tung độ trước khi nén
 int nf;
 pii a[N];
 vector < int > px[N];
-vector < pii > in[N];
+vector < pii > in[N]; 
+
 void readinp(){
     cin >> n;
     FU(i, 1, n) cin >> a[i].fi >> a[i].se;
@@ -138,7 +139,7 @@ void add(int id, int k){
     }
 }
 
-int get(int l, int r, int k){
+int get(int l, int r, int k){ /// trả về số lượng số < k trong đoạn [L,R]
     node *cur = root;
     int res = 0;
     FD(i, 30, 1){
@@ -180,7 +181,7 @@ void solve(){
             if (in[y1][l1-2].se + 1 != in[y2][l2-2].se) continue; /// xét kề nhau trong px[in[y1][l1-2].fi] hay không ?
             int p = in[y1][l1-2].fi;
             int x2 = X[i], x1 = X[in[y1][l1-2].fi];
-            int g = get(p, i, y2 + 1) - get(p, i, y1); /// số lượng điểm trong hcn tìm được
+            int g = get(p, i, y2 + 1) - get(p, i, y1); /// số lượng điểm trong hcn tìm được : trong đó (p, y1) là ô trái dưới, (i, y2) là ô phải trên
             if (g != 4) continue;
             ll dai = 1LL * abs(x1 - x2);
             ll rong = 1LL * abs(Y[y1] - Y[y2]);
