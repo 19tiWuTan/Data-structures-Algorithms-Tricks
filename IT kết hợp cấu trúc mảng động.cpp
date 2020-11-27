@@ -118,13 +118,15 @@ void solve(){
     init();
     FU(i, 1, n){
         ll k = m - a[i];
+      /// a[u] + a[v] + a[i] <= K
+      /// -> a[u] <= k- a[i] - a[v]
         if (i - l[i] < r[i] - i)
-            FU(j, l[i], i)
-                cnt+= cal(1, 1, n, i, r[i], k - a[j]);
+            FU(u, l[i], i)
+                cnt+= cal(1, 1, n, i, r[i], k - a[u]);
 
         else
-            FU(j, i, r[i])
-                cnt+= cal(1, 1, n, l[i], i, k - a[j]);
+            FU(v, i, r[i])
+                cnt+= cal(1, 1, n, l[i], i, k - a[v]);
 
     }
     cout << cnt;
