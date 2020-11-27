@@ -1,5 +1,5 @@
 /*
-  tóm tắt : đếm xem có bao nhiêu đoạn [L,R] : a[L] + a[R] + min(a[L], a[L+1], ..,  a[R]) <= K
+  tóm tắt : đếm xem có bao nhiêu đoạn [L,R] : a[L] + a[R] + min(a[L], a[L+1], ..,  a[R]) <= m
 https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/practice-problems/algorithm/interval-counting-bf6ebe8a/
 */
 
@@ -118,8 +118,8 @@ void solve(){
     init();
     FU(i, 1, n){
         ll k = m - a[i];
-      /// a[u] + a[v] + a[i] <= K
-      /// -> a[u] <= k- a[i] - a[v]
+      /// a[u] + a[v] + a[i] <= m
+      /// -> a[u] <= m - a[i] - a[v]
         if (i - l[i] < r[i] - i)
             FU(u, l[i], i)
                 cnt+= cal(1, 1, n, i, r[i], k - a[u]);
