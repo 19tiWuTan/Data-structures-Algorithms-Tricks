@@ -14,7 +14,12 @@
 
     d(n) là hàm nhân tính
  -> F(n) cũng là hàm nhân tính
-    F(n) = tích tất cả (a[i] + 1) * (a[i] + 2) / 2
+ 
+    nhận xét quan trọng : d(p^a) = a + 1 với p là số nguyên tố
+    
+    khi đó F(p^a) = d(p^0) + d(p^1) + d(p^2) + .. + d(a) = 1 + 2 + .. + (a+1) = (a+1) * (a+2) / 2
+    
+ -> F(n) = tích tất cả (a[i] + 1) * (a[i] + 2) / 2
     trong đó n = (p[1]^a[1]) x (p[2]^a[2]) x .. x (p[k]^a[k])
     với p[i] là thừa số nguyên tố thứ i của n
 
