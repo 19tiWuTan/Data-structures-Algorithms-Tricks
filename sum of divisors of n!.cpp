@@ -1,6 +1,7 @@
 /*
     tóm tắt :
     gọi d(i) là số lượng ước số nguyên dương của i
+    ví dụ d(12) = 6 vì 12 có 6 ước : 1 2 3 4 6 12
     F(n) = cnt
     trong đó cnt được tính như sau :
     for (int i = 1; i <= n; i++)
