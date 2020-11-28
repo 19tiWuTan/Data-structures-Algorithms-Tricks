@@ -57,6 +57,8 @@ ll get (int id, int l, int r, int u, int v){
     return min(t1, t2);
 }
 
+/// f[i] : giá trị tối ưu nhất chia được khi xét đến vị trí i
+
 void solve(){
     for (int i=0;i<=n*6;i++) st[i] = INF;
     deque < int > d; /// xây dựng deque quản lý các chỉ số của các phần tử giảm dần từ front đến back
