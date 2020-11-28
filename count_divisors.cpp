@@ -3,18 +3,7 @@
     sử dụng thuật toán đếm số lượng ước trong O (N ^ 1/ 3)
     
     
-    ý tưởng : 
-    dùng các số nguyên tố p <= N ^ (1/3)
-    chia N thành N =  p ^ k * y
     
-    đặt x = p^k
-    lúc này gcd(x, y) = 1
-    dễ dàng tính F(x)
-    y chỉ có 3 trường hợp : 
-        + y là số nguyên tố thì F(y) = 2 ( 1 và y )
-        + y là 1 số nguyên tố ^ 2 thì F(y) = 3 (1 , số căn y và y)
-        + y là tích của 2 số nguyên tố thì F(y) = 4 ( 1, hai số nguyên tố đó và y)
-    lúc này F(n)*= F(x) * F(y) như đã nói ở trên 
 */
 
 // i'm wutan
