@@ -1,7 +1,9 @@
 /*
     https://lqdoj.edu.vn/problem/matong
     sử dụng thuật toán đếm số lượng ước trong O (N ^ 1/ 3)
-    
+    Note that, we have only these three cases for calculating factors of y since there can be at max two prime factors of y.
+    If it would have had more than two prime factors, one of them would surely have been less than equal to n(1/3), 
+    and hence it would be included in x and not in y.
     
     
 */
