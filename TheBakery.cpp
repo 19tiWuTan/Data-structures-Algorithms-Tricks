@@ -111,7 +111,7 @@ void upd_(int i, int j, int l, int r, int p, int v){
     int mid = (l + r) / 2;
     if (p >= mid + 1) upd_(i * 2 + 1, j, mid + 1, r, p, v);
     else upd_(i * 2, j, l, mid, p, v);
-//    st[i][j] = max(st[i*2][j], st[i*2+1][j]);
+    st[i][j] = max(st[i*2][j], st[i*2+1][j]);
 }
 
 void upd (int i, int j, int l, int r, int u, int v, int g){
