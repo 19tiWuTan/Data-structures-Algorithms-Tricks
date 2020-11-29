@@ -1,7 +1,7 @@
 /*
   
   tóm tắt cho N số nguyên dưuong : với mọi a[i] <= n
-  yêu cầu chia dãy thành K đoạn liên tiếp sao cho tổng độ đẹp của K đoạn này là lớn nhất
+  yêu cầu chia dãy thành K đoạn liên tiếp , mỗi phần tử thuộc đúng 1 đoạn, sao cho tổng độ đẹp của K đoạn này là lớn nhất
   định nghĩa độ đẹp của 1 đoạn = số lượng phần tử khác nhau trong đoạn đó 
   ví dụ đoạn : 1 1 2 1 3 có độ đẹp = 3
         đoạn : 1 1 1 1 1 có độ đẹp = 1
