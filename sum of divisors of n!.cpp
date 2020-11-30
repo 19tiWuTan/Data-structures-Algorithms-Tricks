@@ -1,8 +1,6 @@
 /*
-    tóm tắt :
-    gọi d(i) là số lượng ước số nguyên dương của i
-    ví dụ d(12) = 6 vì 12 có 6 ước : 1 2 3 4 6 12
-    F(n) = cnt
+    tóm tắt d(i) là số lượng ước số nguyên dương của i
+    f(n) = cnt
     trong đó cnt được tính như sau :
     for (int i = 1; i <= n; i++)
         if (i là ước của n)
@@ -14,12 +12,7 @@
 
     d(n) là hàm nhân tính
  -> F(n) cũng là hàm nhân tính
- 
-    nhận xét quan trọng : d(p^a) = a + 1 với p là số nguyên tố
-    
-    khi đó F(p^a) = d(p^0) + d(p^1) + d(p^2) + .. + d(a) = 1 + 2 + .. + (a+1) = (a+1) * (a+2) / 2
-    
- -> F(n) = tích tất cả (a[i] + 1) * (a[i] + 2) / 2
+    F(n) = tích tất cả (a[i] + 1) * (a[i] + 2) / 2
     trong đó n = (p[1]^a[1]) x (p[2]^a[2]) x .. x (p[k]^a[k])
     với p[i] là thừa số nguyên tố thứ i của n
 
@@ -79,8 +72,8 @@ void setIO() {
     }
 }
 
-const int N = 1e6 + 1;
-const ll mod = 1e9 + 7;
+const int N = 1e6 + 5;
+const ll mod = 1e7 + 7;
 vector < int > nt;
 int n; bool p[N]{0};
 ll f[N];
@@ -112,16 +105,13 @@ void solve(){
     for (auto i : nt){
         if (i > n) break;
         ll u = i;
-        ll cnt = 0LL;
+        ll cnt = 0;
         while (u <= n){
-            cnt+= (n / u);
-            u = u * i;
+            cnt+= ll(n / u);
+            u = u * ll(i);
         }
-        ll temp = mul(cnt + 1, cnt + 2);
-        temp = mul(temp, poww(2LL, mod - 2));
-        res = mul(res, temp);
+        res = res * (cnt + 1) * (cnt + 2) / 2 % mod;
     }
-
     f[n] = res;
     cout << f[n],EL;
 }
@@ -131,8 +121,8 @@ int main(){
     FU(i, 2, sqrt(1e6)) if (!p[i])
         for (int j = i * i; j <= 1e6; j+= i) p[j] = true;
     FU(i, 2, 1e6) if (!p[i]) nt.push_back(i);
+
     int t = 1;
-//    cin >> t;
     while (1){
         readinp();
         solve();
