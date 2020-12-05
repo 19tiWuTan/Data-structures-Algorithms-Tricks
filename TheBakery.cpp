@@ -26,7 +26,7 @@
   và lazy để thực hiện update 1 đoạn 
   
   thế thì khi xét đến vị trí i trong lớp j
-      
+  tăng tất cả f[u][j-1] lên 1 với l[i] <= u <= i - 1
   f[i][j] = max (  + f[i][j-1] : cho a[i] vào đoạn trước đó
                 (  + get(1, j - 1, 1, n, 1, i) : tạo 1 đoạn mới chứa a[i]
           
