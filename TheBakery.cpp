@@ -18,8 +18,8 @@
   giả sử đã tính được lớp j-1 (F[i][j-1])
   Khi thực hiện tính đến lớp j, 
   Duyệt qua lần lượt các vị trí i = 1 .. n
-  Khi từ i sang i + 1
-  dễ dàng tìm được đoạn [l .. r] sao cho đoạn này không chứa phần tử a[i]
+  Khi từ i - 1 sang i
+  tìm đoạn [l .. r] sao cho đoạn này không chứa phần tử a[i]
   thì số lượng phần tử khác nhau trong các đoạn [j .. i] sẽ tăng lên 1 (khi gắn a[i] vào ) với j thuộc đoạn [l .. r] tìm được
   
   sử dụng IT với j lớp để quản lý các giá trị f[i][j]
