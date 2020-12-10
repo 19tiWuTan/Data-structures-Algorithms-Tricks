@@ -134,7 +134,7 @@ void readinp(){
     FU(i, 1, m2){
         int u, v, w;
         read(u), read(v), read(w);
-        if (w < 0) res+= w, w = 0;
+        if (w < 0) res+= w, w = 0; /// tham lam dùng những cạnh trọng số âm
         edg[i] = {u, v, w};
         g[u].push_back({w, v});
     }
