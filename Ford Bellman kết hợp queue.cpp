@@ -19,3 +19,5 @@ while (!q.empty()) {
 		}
 	}
 }
+
+Thuật toán này dùng được cho đồ thị có trọng số âm. Độ phức tạp trong trường hợp xấu nhất là O(m*n) nhưng tốc độ trung bình ngang với Dijkstra heap.
